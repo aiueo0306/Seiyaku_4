@@ -34,8 +34,12 @@ jobs:
         run: python RSS1.py || echo "RSS1.py failed" >> errors.log
         continue-on-error: true
 
-      - name: Run RSS2
-        run: python RSS2.py || echo "RSS2.py failed" >> errors.log
+      - name: Run RSS2-1
+        run: python RSS2-1.py || echo "RSS2.py failed" >> errors.log
+        continue-on-error: true
+
+      - name: Run RSS2-2
+        run: python RSS2-2.py || echo "RSS2.py failed" >> errors.log
         continue-on-error: true
 
       - name: Run RSS3
