@@ -27,7 +27,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.takeda.com/jp/newsroom/press-releases/"
-GAKKAI = "グローバル"
+GAKKAI = "武田薬品（グローバル）"
 
 SELECTOR_TITLE = "div.Grid_grid__kFVcD div.flex.flex-col.gap-4"
 title_selector = "span#sanity-markdown-metadata"

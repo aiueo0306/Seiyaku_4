@@ -25,16 +25,16 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.mt-pharma.co.jp/"
-GAKKAI = "田辺三菱(ニュース)"
+BASE_URL = "https://www.teikoku.co.jp/med_database/news"
+GAKKAI = "帝國製薬（医療機関）"
 
-SELECTOR_TITLE = "div.news__list div.list__item"
-title_selector = "span"
-title_index = 1
+SELECTOR_TITLE = "ul.news_list li"
+title_selector = "span.ttl"
+title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.news__list div.list__item"  # typo修正済み
-date_selector = "time"
+SELECTOR_DATE = "ul.news_list li"  # typo修正済み
+date_selector = "span.date"
 date_index = 0
 year_unit = "年"
 month_unit = "月"
@@ -46,7 +46,7 @@ date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_uni
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 1  # 0: ポップアップ処理しない, 1: 処理する
-POPUP_BUTTONS = ["同意する"] if POPUP_MODE else [] 
+POPUP_BUTTONS = ["はい"] if POPUP_MODE else [] 
 WAIT_BETWEEN_POPUPS_MS = 500
 BUTTON_TIMEOUT_MS = 12000
 
@@ -114,6 +114,6 @@ with sync_playwright() as p:
         print("⚠ 抽出できた記事がありません。HTML構造が変わっている可能性があります。")
 
     os.makedirs("rss_output", exist_ok=True)
-    rss_path = "rss_output/Feed8.xml"
+    rss_path = "rss_output/Feed16-2.xml"
     generate_rss(items, rss_path, BASE_URL, GAKKAI)
     browser.close()

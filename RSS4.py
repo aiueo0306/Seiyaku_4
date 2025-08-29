@@ -27,7 +27,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.takeda-teva.com/news/"
-GAKKAI = "武田テバファーマ"
+GAKKAI = "武田テバファーマ(ニュース)"
 
 SELECTOR_TITLE = "div.sec_news dl"
 title_selector = "a"

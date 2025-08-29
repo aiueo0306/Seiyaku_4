@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.daitonet.co.jp/"
-GAKKAI = "ダイト"
+GAKKAI = "ダイト(ニュース)"
 
 SELECTOR_TITLE = "ul#ajax_news li"
 title_selector = "span"

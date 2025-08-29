@@ -27,7 +27,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.tatsumi-kagaku.com/"
-GAKKAI = "辰巳化学"
+GAKKAI = "辰巳化学(ニュース)"
 
 SELECTOR_TITLE = "a.isEven"
 title_selector = "font"

@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.terumo.co.jp/newsrelease"
-GAKKAI = "テルモ"
+GAKKAI = "テルモ（ニュース）"
 
 SELECTOR_TITLE = "div.item-list li"
 title_selector = "span"

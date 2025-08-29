@@ -26,7 +26,7 @@ from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
 BASE_URL = "https://www.daiichisankyo-ep.co.jp/"
-GAKKAI = "第一三共エスファ"
+GAKKAI = "第一三共エスファ（お知らせ）"
 
 SELECTOR_TITLE = "ul.newsUl.newsUl0 li"
 title_selector = "span.underline"
