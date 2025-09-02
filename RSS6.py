@@ -69,9 +69,9 @@ with sync_playwright() as p:
 
     try:
         print("▶ ページにアクセス中...")
-        page.goto(BASE_URL, timeout=30000)
+        page.goto(BASE_URL, timeout=120000)
         try:
-            page.wait_for_load_state("networkidle", timeout=30000)
+            page.wait_for_load_state("networkidle", timeout=120000)
         except Exception:
             page.wait_for_load_state("domcontentloaded")
         print("🌐 到達URL:", page.url)

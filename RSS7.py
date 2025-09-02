@@ -48,7 +48,7 @@ date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_uni
 USE_IFRAME = True                      # ← iframeページなら True
 IFRAME_SELECTOR = "iframe"             # ← 必要なら絞り込み: "iframe[src*='xxx']"
 IFRAME_INDEX = 0                       # ← 複数ある場合の何番目か
-IFRAME_TIMEOUT_MS = 30000
+IFRAME_TIMEOUT_MS = 120000
 
 # ===== ポップアップ順序クリック設定 =====
 POPUP_MODE = 0  # 0: ポップアップ処理しない, 1: 処理する
@@ -76,9 +76,9 @@ with sync_playwright() as p:
 
     try:
         print("▶ ページにアクセス中...")
-        page.goto(BASE_URL, timeout=30000)
+        page.goto(BASE_URL, timeout=120000)
         try:
-            page.wait_for_load_state("networkidle", timeout=30000)
+            page.wait_for_load_state("networkidle", timeout=120000)
         except Exception:
             page.wait_for_load_state("domcontentloaded")
         print("🌐 到達URL:", page.url)
@@ -96,7 +96,7 @@ with sync_playwright() as p:
             print("ℹ ポップアップ処理はスキップしました（POPUP_MODE=0 または ボタン未指定）")
 
         # 本文読み込み
-        page.wait_for_load_state("load", timeout=30000)
+        page.wait_for_load_state("load", timeout=120000)
 
     except PlaywrightTimeoutError:
         print("⚠ ページの読み込みに失敗しました。")
