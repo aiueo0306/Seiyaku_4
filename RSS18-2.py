@@ -28,13 +28,13 @@ from browser_utils import click_button_in_order
 BASE_URL = "https://medical.teijin-pharma.co.jp/index.html"
 GAKKAI = "帝人（医療機関）"
 
-SELECTOR_TITLE = "div.news-page-list div.news"
+SELECTOR_TITLE = "div.news-page-list p.newstitle"
 title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.news-page-list div.news"  # typo修正済み
-date_selector = "p"
+SELECTOR_DATE = "div.news-page-list p.news_iyaku_di.iyaku.specialty.hypoparathyroidism.yo_yov"  # typo修正済み
+date_selector = ""
 date_index = 0
 year_unit = "年"
 month_unit = "月"
