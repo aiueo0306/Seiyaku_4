@@ -25,7 +25,7 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://medical.teijin-pharma.co.jp/news/iyaku.html"
+BASE_URL = "https://medical.teijin-pharma.co.jp/index.html"
 GAKKAI = "帝人（医療機関）"
 
 SELECTOR_TITLE = "div.news-page-list div.news"
