@@ -26,16 +26,16 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://www.takeda.com/jp/newsroom/press-releases/"
-GAKKAI = "武田薬品（グローバル）"
+BASE_URL = "https://www.takeda.com/jp/"
+GAKKAI = "武田薬品"
 
-SELECTOR_TITLE = "div.Grid_grid__kFVcD div.flex.flex-col.gap-4"
-title_selector = "span#sanity-markdown-metadata"
+SELECTOR_TITLE = "div.Grid_grid__rZLaC article"
+title_selector = "h3"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.Grid_grid__kFVcD div.flex.items-center.text-medium-grey"
-date_selector = "span.font-light.tracking-widest"
+SELECTOR_DATE = "div.Grid_grid__rZLaC article"
+date_selector = "span.text-[14px]"
 date_index = 0
 year_unit = "年"
 month_unit = "月"
