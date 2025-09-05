@@ -25,20 +25,20 @@ from scraper_utils import extract_items
 from browser_utils import click_button_in_order
 
 # ===== 固定情報（学会サイト） =====
-BASE_URL = "https://medical.teijin-pharma.co.jp/index.html"
+BASE_URL = "https://medical.teijin-pharma.co.jp/news/iyaku.html"
 GAKKAI = "帝人（医療機関）"
 
-SELECTOR_TITLE = "p.newstitle"
+SELECTOR_TITLE = "div.news-page-list div.news"
 title_selector = "a"
 title_index = 0
 href_selector = "a"
 href_index = 0
-SELECTOR_DATE = "div.news-page-list"  # typo修正済み
+SELECTOR_DATE = "div.news-page-list div.news"  # typo修正済み
 date_selector = "p"
 date_index = 0
-year_unit = "."
-month_unit = "."
-day_unit = ""
+year_unit = "年"
+month_unit = "月"
+day_unit = "日"
 date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
 date_regex = rf"(\d{{2,4}}){year_unit}(\d{{1,2}}){month_unit}(\d{{1,2}}){day_unit}"
 # date_format = f"%Y{year_unit}%m{month_unit}%d{day_unit}"
@@ -70,9 +70,9 @@ with sync_playwright() as p:
 
     try:
         print("▶ ページにアクセス中...")
-        page.goto(BASE_URL, timeout=240000)
+        page.goto(BASE_URL, timeout=30000)
         try:
-            page.wait_for_load_state("networkidle", timeout=240000)
+            page.wait_for_load_state("networkidle", timeout=30000)
         except Exception:
             page.wait_for_load_state("domcontentloaded")
         print("🌐 到達URL:", page.url)
@@ -90,7 +90,7 @@ with sync_playwright() as p:
             print("ℹ ポップアップ処理はスキップしました（POPUP_MODE=0 または ボタン未指定）")
 
         # 本文読み込み
-        page.wait_for_load_state("load", timeout=240000)
+        page.wait_for_load_state("load", timeout=30000)
 
     except PlaywrightTimeoutError:
         print("⚠ ページの読み込みに失敗しました。")
