@@ -117,6 +117,6 @@ with sync_playwright() as p:
         print("⚠ 抽出できた記事がありません。HTML構造が変わっている可能性があります。")
 
     os.makedirs("rss_output", exist_ok=True)
-    rss_path = "rss_output/Feed10.xml"
+    rss_path = "rss_output/Feed1.xml"
     generate_rss(items, rss_path, BASE_URL, GAKKAI)
     browser.close()
